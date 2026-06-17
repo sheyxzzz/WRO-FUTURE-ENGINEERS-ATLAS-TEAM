@@ -8,16 +8,17 @@ An autonomous vehicle prototype developed for the WRO Future Engineers category,
 ## Content
 
 * `t-photos` This section has 2 cool photos of us as a team so you can get to know us✨🌀
-* `v-photos` contiene 6 fotos del vehículo (de cada lado, de arriba a abajo)
-* `video` contiene el archivo video.md con el enlace a un vídeo en el que existe una demostración de conducción
-* `schemes` contiene uno o varios diagramas esquemáticos en formato JPEG, PNG o PDF de los componentes electromecánicos que ilustran todos los elementos (componentes electrónicos y motores) utilizados en el vehículo y cómo se conectan entre sí.
-* `src` contiene el código del software de control de todos los componentes que se programaron para participar en la competición
-* `models` es para los archivos de los modelos utilizados por impresoras 3D, máquinas de corte por láser y máquinas CNC para producir los elementos del vehículo. Si no hay nada que agregar a esta ubicación, se puede eliminar el directorio.
-* `other` es para otros archivos que se pueden usar para entender cómo preparar el vehículo para la competencia. Puede incluir documentación sobre cómo conectarse a un SBC/SBM y cargar archivos allí, conjuntos de datos, especificaciones de hardware, descripciones de protocolos de comunicación, etc. Si no hay nada que agregar a esta ubicación, se puede eliminar el directorio.
+* `v-photos` This section has 6 photos of the vehicle covering every single angle (front, back, sides, top, and bottom)🚙📸
+* `video`  markdown file with the link to a video showing the robot in action, tearing up the track💨
+* `schemes`One or more schematics (JPEG, PNG, or PDF) showing all the electromechanical components: motors, sensors, and electronics, and exactly how they connect to each other⚡️
+* `src` All the code used to control every single component and make the robot race-ready🧠.
+* `models`The source files for 3D printers, laser cutters, or CNC machines used to custom-make the vehicle's parts🧩
+* `other` Anything else needed to understand how to get the robot ready for the track. This includes datasets, hardware specs, communication protocol breakdowns, and assembly guides📑
 
-## Introducción
+## Overview🚨
 
-_Esta parte debe ser completada por los participantes con las aclaraciones técnicas sobre el código: de qué módulos consta el código, cómo se relacionan con los componentes electromecánicos del vehículo y cuál es el proceso para construir/compilar/cargar el código a los controladores del vehículo._
+The prototype is a fully autonomous mobile robot built with an integrated mechatronics setup, designed to crush the tracks in the World Robot Olympiad’s Future Engineers category. At the heart of it all is an Arduino control unit running the main control loop, handling peripheral signals, and managing the power stage via PWM (Pulse Width Modulation). For track-following and sign recognition, we hooked up a Pixy2 PixyCam. It processes images locally using color segmentation algorithms and feeds the target position vectors straight to the microcontroller via an SPI or I2C serial interface. To spot unexpected obstacles and avoid close-range crashes, the car uses an array of time-of-flight ultrasonic sensors spaced out around the chassis, which calculate distance by measuring high-frequency pulse returns.
+Instead of a basic, conventional setup, the locomotion relies on a single-motor drivetrain. A single DC motor drives the wheels to set the car’s linear speed, working hand-in-hand with a steering mechanism to control the turning angle. To lock in precise speed control and track our path, we integrated just one quadrature encoder coupled directly to the drive motor shaft. This rotary sensor generates electrical pulses that the Arduino decodes using hardware interrupts, letting us calculate the actual linear speed in real time and estimate the total distance covered via odometry. This actively compensates for torque loss from friction or battery voltage drops.
 
 ## Cómo preparar el repositorio en función de la plantilla
 
