@@ -5,11 +5,11 @@ Este repositorio contiene materiales de ingeniería de un modelo de vehículo au
 
 Este repositorio trata de ser una versión fiel, traducida al español de la plantilla generada por la [World Robot Olympiad](https://github.com/World-Robot-Olympiad-Association/wro2022-fe-template/), tenga en cuenta que para la competencia internacional el texto debe estar en ingles.
 
-<b>Recuerde que el repositorio debe ser público y siempre accesible.</b>
 
-## Contenido
 
-* `t-photos` contiene 2 fotos del equipo (una oficial y una foto divertida con todos los miembros del equipo)
+## Content
+
+* `t-photos` This section has 2 cool photos of us as a team so you can get to know us✨🌀
 * `v-photos` contiene 6 fotos del vehículo (de cada lado, de arriba a abajo)
 * `video` contiene el archivo video.md con el enlace a un vídeo en el que existe una demostración de conducción
 * `schemes` contiene uno o varios diagramas esquemáticos en formato JPEG, PNG o PDF de los componentes electromecánicos que ilustran todos los elementos (componentes electrónicos y motores) utilizados en el vehículo y cómo se conectan entre sí.
