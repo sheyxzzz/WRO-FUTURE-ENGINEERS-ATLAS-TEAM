@@ -20,18 +20,16 @@ An autonomous vehicle prototype developed for the WRO Future Engineers category,
 The prototype is a fully autonomous mobile robot built with an integrated mechatronics setup, designed to crush the tracks in the World Robot Olympiad’s Future Engineers category. At the heart of it all is an Arduino control unit running the main control loop, handling peripheral signals, and managing the power stage via PWM (Pulse Width Modulation). For track-following and sign recognition, we hooked up a Pixy2 PixyCam. It processes images locally using color segmentation algorithms and feeds the target position vectors straight to the microcontroller via an SPI or I2C serial interface. To spot unexpected obstacles and avoid close-range crashes, the car uses an array of time-of-flight ultrasonic sensors spaced out around the chassis, which calculate distance by measuring high-frequency pulse returns.
 Instead of a basic, conventional setup, the locomotion relies on a single-motor drivetrain. A single DC motor drives the wheels to set the car’s linear speed, working hand-in-hand with a steering mechanism to control the turning angle. To lock in precise speed control and track our path, we integrated just one quadrature encoder coupled directly to the drive motor shaft. This rotary sensor generates electrical pulses that the Arduino decodes using hardware interrupts, letting us calculate the actual linear speed in real time and estimate the total distance covered via odometry. This actively compensates for torque loss from friction or battery voltage drops.
 
-## Cómo preparar el repositorio en función de la plantilla
+## Project description: Problem statement and goals
 
-_Elimine esta sección antes de la primera confirmación en el repositorio_
+How can a robot dynamically avoid both visible and invisible obstacles in real-time within a competition circuit using a single-motor traction system, basic microcontroller processing, and dedicated sensor fusion?
 
-1. Clone este repositorio utilizando la funcionalidad `git clone`.
-2. Elimine el directorio `.git`
-3. [Inicialice un nuevo repositorio público en GitHub](https://github.com/new) siguiendo las instrucciones de la sección "Crear un nuevo repositorio en la línea de comandos" (que aparece después de presionar el botón "Crear repositorio").
+GOALS✨🐠
+
+ * Integrate embedded AI vision using a PixyCam for real-time color segmentation and line tracking.
+ * Implement ultrasonic-based distance awareness with distributed sensors for close-range obstacle detection and collision avoidance.
+ * Ensure precise linear speed control and odometry feedback using a single quadrature encoder on the main drive motor.
+ * Optimize power distribution and motor actuation commands directly from an Arduino microcontroller.
+ * Develop a lightweight finite state machine to solve open and surprise circuits seamlessly under limited processing constraints.
 
 
-
-_Remove this section before the first commit to the repository_
-
-1. Clone this repo by using the `git clone` functionality.
-2. Remove `.git` directory
-3. [Initialize a new public repository on GitHub](https://github.com/new) by following instructions from "create a new repository on the command line" section (appeared after pressing "Create repository" button).
